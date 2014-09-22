@@ -17,7 +17,12 @@ public class TaskList {
 	public Task getTask(int i){
 		return TaskArrayList.get(i);
 	}
-
+	
+	public int getIndex(Task task){
+		int a = TaskArrayList.indexOf(task);
+		return a;
+	}
+	
 	public void addTask(Task sampleTask) {
 		// TODO Auto-generated method stub
 		TaskArrayList.add(sampleTask);
