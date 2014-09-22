@@ -51,4 +51,14 @@ public class TaskList {
 		Task task = TaskArrayList.get(i);
 		task.setSelected(false);
 	}
+	
+	public void checkTask(int i){
+		Task task = TaskArrayList.get(i);
+		task.setChecked(true);
+	}
+	
+	public void uncheckTask(int i){
+		Task task = TaskArrayList.get(i);
+		task.setChecked(false);
+	}
 }
