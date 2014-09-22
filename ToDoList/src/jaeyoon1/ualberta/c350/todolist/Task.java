@@ -28,5 +28,18 @@ public class Task {
 	public Boolean isChecked(){
 		return this.taskChecked;
 	}
+	
+	public void setArchive(boolean a){
+		taskArchived = a;
+	}
+	
+	public void setSelected(boolean a){
+		taskSelected = a;
+	}
+	
+	public void setChecked(boolean a){
+		taskChecked = a;
+	}
+	
 
 }

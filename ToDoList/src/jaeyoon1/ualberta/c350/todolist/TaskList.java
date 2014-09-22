@@ -7,27 +7,43 @@ import jaeyoon1.ualberta.c350.todolist.Task;
 
 public class TaskList {
 	
+	protected ArrayList<Task> TaskArrayList = new ArrayList<Task>();
 
 	public Collection<Task> getTasks() {
 		// TODO Auto-generated method stub
-		return new ArrayList<Task>();
+		return TaskArrayList;
+	}
+	
+	public Task getTask(int i){
+		return TaskArrayList.get(i);
 	}
 
 	public void addTask(Task sampleTask) {
 		// TODO Auto-generated method stub
-		
+		TaskArrayList.add(sampleTask);
 	}
 	
-	public void removeTask(){
-		
+	public void removeTask(int i){
+		TaskArrayList.remove(i);
 	}
 	
-	public void archiveTask(){
-		
+	public void archiveTask(int i){
+		Task task = TaskArrayList.get(i);
+		task.setArchive(true);
 	}
 	
-	public void selectTask(){
-		
+	public void unarchiveTask(int i){
+		Task task = TaskArrayList.get(i);
+		task.setArchive(false);
 	}
-
+	
+	public void selectTask(int i){
+		Task task = TaskArrayList.get(i);
+		task.setSelected(true);
+	}
+	
+	public void deselectTask(int i){
+		Task task = TaskArrayList.get(i);
+		task.setSelected(false);
+	}
 }
