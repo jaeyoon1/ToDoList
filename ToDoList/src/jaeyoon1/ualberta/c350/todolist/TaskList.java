@@ -7,11 +7,19 @@ import jaeyoon1.ualberta.c350.todolist.Task;
 
 public class TaskList {
 	
-	protected ArrayList<Task> TaskArrayList = new ArrayList<Task>();
-
+	protected ArrayList<Task> TaskArrayList;
+	
+	public TaskList() {
+		TaskArrayList = new ArrayList<Task>();
+	}
+	
 	public Collection<Task> getTasks() {
 		// TODO Auto-generated method stub
 		return TaskArrayList;
+	}
+	
+	public boolean contains(Task task){
+		return TaskArrayList.contains(task);
 	}
 	
 	public Task getTask(int i){
@@ -21,6 +29,10 @@ public class TaskList {
 	public int getIndex(Task task){
 		int a = TaskArrayList.indexOf(task);
 		return a;
+	}
+	
+	public int getSize(){
+		return TaskArrayList.size();
 	}
 	
 	public void addTask(Task sampleTask) {
