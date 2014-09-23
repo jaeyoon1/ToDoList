@@ -18,6 +18,10 @@ public class TaskList {
 		return TaskArrayList;
 	}
 	
+	public boolean contains(Task task){
+		return TaskArrayList.contains(task);
+	}
+	
 	public Task getTask(int i){
 		return TaskArrayList.get(i);
 	}

@@ -8,8 +8,7 @@ import jaeyoon1.ualberta.c350.todolist.*;
 public class TaskListTest extends TestCase {
 	public void testTaskList(){
 		TaskList taskList = new TaskList();
-		Collection<Task> tasks = taskList.getTasks();
-		assertTrue("Empty Task List",tasks.size() == 0);
+		assertTrue("Empty Task List",taskList.getSize() == 0);
 		
 	}
 
@@ -18,11 +17,10 @@ public class TaskListTest extends TestCase {
 		String taskname = "A task ;w;";
 		Task sampleTask = new Task(taskname);
 		taskList.addTask(sampleTask);
-		Collection<Task> tasks = taskList.getTasks();
-		assertTrue("Empty Task List",tasks.size() == 1);
-		assertTrue("Empty Task List",tasks.contains(sampleTask));
+		assertTrue("Empty Task List",taskList.getSize() == 1);
+		assertTrue("Empty Task List",taskList.contains(sampleTask));
 		taskList.removeTask(taskList.getIndex(sampleTask));
-		assertTrue("Empty Task List",tasks.size() == 0);
+		assertTrue("Empty Task List",taskList.getSize() == 0);
 	}
 	
 	public void testArchiveTask(){
@@ -30,9 +28,8 @@ public class TaskListTest extends TestCase {
 		String taskname = "A task ;w;";
 		Task sampleTask = new Task(taskname);
 		taskList.addTask(sampleTask);
-		Collection<Task> tasks = taskList.getTasks();
-		assertTrue("Empty Task List",tasks.size() == 1);
-		assertTrue("Empty Task List",tasks.contains(sampleTask));
+		assertTrue("Empty Task List",taskList.getSize() == 1);
+		assertTrue("Empty Task List",taskList.contains(sampleTask));
 		taskList.archiveTask(0);
 		Task uwaa = taskList.getTask(0);
 		assertTrue("not archived",uwaa.isArchived());
