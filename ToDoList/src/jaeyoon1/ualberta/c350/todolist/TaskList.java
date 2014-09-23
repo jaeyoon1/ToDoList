@@ -21,10 +21,7 @@ public class TaskList {
 	public boolean contains(Task task){
 		return TaskArrayList.contains(task);
 	}
-	
-	public Task getTask(int i){
-		return TaskArrayList.get(i);
-	}
+
 	
 	public int getIndex(Task task){
 		int a = TaskArrayList.indexOf(task);
@@ -34,6 +31,15 @@ public class TaskList {
 	public int getSize(){
 		return TaskArrayList.size();
 	}
+	
+	public Task getTask(int i) throws EmptyTaskListException{
+		int size = TaskArrayList.size();
+		if (size <= 0) {
+			throw new EmptyTaskListException();
+		}
+		return TaskArrayList.get(i);
+	}
+	
 	
 	public void addTask(Task sampleTask) {
 		// TODO Auto-generated method stub
