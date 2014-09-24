@@ -109,4 +109,23 @@ public class TaskList {
 		return count;
 	}
 	
+	public int numCheckedArchived(){
+		int count = 0;
+		for (Task task : TaskArrayList){
+			if (task.isArchived() == true && task.isChecked() == true){
+				count = count+1;
+			}
+		}
+		return count;
+	}
+	
+	public int numUncheckedArchived(){
+		int count = 0;
+		for (Task task : TaskArrayList){
+			if (task.isArchived() == true && task.isChecked() == false){
+				count = count+1;
+			}
+		}
+		return count;
+	}
 }
