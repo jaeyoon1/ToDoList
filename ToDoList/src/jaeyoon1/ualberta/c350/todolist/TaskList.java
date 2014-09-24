@@ -40,7 +40,6 @@ public class TaskList {
 		return TaskArrayList.get(i);
 	}
 	
-	
 	public void addTask(Task sampleTask) {
 		// TODO Auto-generated method stub
 		TaskArrayList.add(sampleTask);
@@ -79,4 +78,35 @@ public class TaskList {
 		Task task = TaskArrayList.get(i);
 		task.setChecked(false);
 	}
+	
+	public int numChecked(){
+		int count = 0;
+		for (Task task : TaskArrayList){
+			if (task.isChecked() == true){
+				count = count+1;
+			}
+		}
+		return count;
+	}
+	
+	public int numUnchecked(){
+		int count = 0;
+		for (Task task : TaskArrayList){
+			if (task.isChecked() == false){
+				count = count+1;
+			}
+		}
+		return count;
+	}
+	
+	public int numArchived(){
+		int count = 0;
+		for (Task task : TaskArrayList){
+			if (task.isArchived() == true){
+				count = count+1;
+			}
+		}
+		return count;
+	}
+	
 }
