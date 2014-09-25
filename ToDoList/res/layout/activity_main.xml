@@ -12,7 +12,6 @@
         android:id="@+id/tasklist"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/textfield"
         android:layout_alignParentTop="true"
         android:layout_alignRight="@+id/add_screen_button_add" >
 
