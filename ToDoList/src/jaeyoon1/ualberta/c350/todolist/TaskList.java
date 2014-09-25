@@ -32,11 +32,8 @@ public class TaskList {
 		return TaskArrayList.size();
 	}
 	
-	public Task getTask(int i) throws EmptyTaskListException{
-		int size = TaskArrayList.size();
-		if (size <= 0) {
-			throw new EmptyTaskListException();
-		}
+	public Task getTask(int i){
+
 		return TaskArrayList.get(i);
 	}
 	

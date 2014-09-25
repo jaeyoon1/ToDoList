@@ -7,9 +7,9 @@
         android:id="@+id/tasktitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentTop="true"
+        android:layout_toLeftOf="@+id/add_screen_button_add"
         android:ems="10" >
 
         <requestFocus />
@@ -19,17 +19,18 @@
         android:id="@+id/add_screen_button_add"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_below="@+id/tasktitle"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
         android:text="Add" />
 
-    <Button
-        android:id="@+id/add_screen_button_cancel"
-        android:layout_width="wrap_content"
+    <ListView
+        android:id="@+id/listView1"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/add_screen_button_add"
-        android:layout_alignBottom="@+id/add_screen_button_add"
-        android:layout_toRightOf="@+id/add_screen_button_add"
-        android:text="Cancel" />
+        android:layout_above="@+id/add_screen_button_add"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true" >
+
+    </ListView>
 
 </RelativeLayout>
