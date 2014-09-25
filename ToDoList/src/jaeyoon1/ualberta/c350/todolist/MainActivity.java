@@ -57,6 +57,13 @@ public class MainActivity extends Activity {
     	Intent intent = new Intent(MainActivity.this,MailScreenActivity.class);
     	startActivity(intent);
     }
+    
+    public void addTask(View view){
+    	Toast.makeText(this,"AddButton",Toast.LENGTH_SHORT).show();
+    	TaskListController tc = new TaskListController();
+    	EditText textview = (EditText) findViewById(R.id.main_textfield_add);
+    	tc.addTask(new Task(textview.getText().toString()));
+    }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {

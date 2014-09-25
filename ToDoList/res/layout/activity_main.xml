@@ -12,31 +12,32 @@
         android:id="@+id/tasklist"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/textfield"
+        android:layout_above="@+id/main_textfield_add"
         android:layout_alignParentTop="true" >
 
     </ListView>
 
     <EditText
-        android:id="@+id/textfield"
+        android:id="@+id/main_textfield_add"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
-        android:layout_toLeftOf="@+id/main_screen_button_add"
+        android:layout_toLeftOf="@+id/main_button_add"
         android:ems="10" >
 
         <requestFocus />
     </EditText>
 
     <Button
-        android:id="@+id/main_screen_button_add"
+        android:id="@+id/main_button_add"
         style="?android:attr/buttonStyleSmall"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
-        android:layout_alignTop="@+id/textfield"
+        android:layout_alignTop="@+id/main_textfield_add"
+        android:onClick="addTask"
         android:text="Add" />
 
 </RelativeLayout>
