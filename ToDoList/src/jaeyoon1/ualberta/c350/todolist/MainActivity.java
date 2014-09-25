@@ -1,5 +1,8 @@
 package jaeyoon1.ualberta.c350.todolist;
 
+import java.util.ArrayList;
+import java.util.Collection;
+
 import jaeyoon1.ualberta.c350.todolist.R;
 import android.app.Activity;
 import android.os.Bundle;
@@ -22,7 +25,22 @@ public class MainActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-    }
+        ListView listView = (ListView) findViewById(R.id.tasklist);
+        Collection<Task> Tasks = TaskListController.getTaskList().getTasks();
+        final ArrayList<Task> list = new ArrayList<Task>(Tasks);
+        final ArrayAdapter<Task> taskAdapter = new ArrayAdapter<Task>(this,android.R.layout.simple_list_item_1,list);
+        listView.setAdapter(taskAdapter);
+
+        
+        TaskListController.getTaskList().addListener(new Listener(){
+        	public void update(){
+        		list.clear();
+        		Collection<Task> Tasks = TaskListController.getTaskList().getTasks();
+        		list.addAll(Tasks);
+        		taskAdapter.notifyDataSetChanged();
+        	}
+        });
+	}
     
 
 
@@ -63,7 +81,10 @@ public class MainActivity extends Activity {
     	TaskListController tc = new TaskListController();
     	EditText textview = (EditText) findViewById(R.id.main_textfield_add);
     	tc.addTask(new Task(textview.getText().toString()));
+    	//Toast.makeText(this,textview.getText().toString(),Toast.LENGTH_SHORT).show();
+    	//Toast.makeText(this,Integer.toString(tc.getSize()),Toast.LENGTH_SHORT).show();
     }
+    
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {

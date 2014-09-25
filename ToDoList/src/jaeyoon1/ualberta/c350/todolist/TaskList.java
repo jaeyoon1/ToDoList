@@ -8,9 +8,11 @@ import jaeyoon1.ualberta.c350.todolist.Task;
 public class TaskList {
 	
 	protected ArrayList<Task> TaskArrayList;
+	protected ArrayList<Listener> listeners;
 	
 	public TaskList() {
 		TaskArrayList = new ArrayList<Task>();
+		listeners = new ArrayList<Listener>();
 	}
 	
 	public Collection<Task> getTasks() {
@@ -21,7 +23,20 @@ public class TaskList {
 	public boolean contains(Task task){
 		return TaskArrayList.contains(task);
 	}
-
+	
+	private void notifyListeners(){
+		for(Listener listener : listeners){
+			listener.update();
+		}
+	}
+	
+	public void addListener (Listener l){
+		listeners.add(l);
+	}
+	
+	public void removeListener (Listener l){
+		listeners.remove(l);
+	}
 	
 	public int getIndex(Task task){
 		int a = TaskArrayList.indexOf(task);

@@ -11,8 +11,12 @@ public class Task {
 		this.taskName = taskName;
 		
 	}
+	
+	public String toString(){
+		return getTask();
+	}
 
-	public Object getTask() {
+	public String getTask() {
 		// TODO Auto-generated method stub
 		return this.taskName;
 	}

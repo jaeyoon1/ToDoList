@@ -16,4 +16,8 @@ public class TaskListController {
 	public void addTask(Task task) {
 		getTaskList().addTask(task);
 	}
+	
+	public int getSize(){
+		return getTaskList().getSize();
+	}
 }
