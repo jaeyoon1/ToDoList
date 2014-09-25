@@ -25,10 +25,11 @@ public final class R {
         public static final int ic_launcher=0x7f020000;
     }
     public static final class id {
-        public static final int ArchiveView=0x7f080009;
-        public static final int DeleteView=0x7f08000a;
-        public static final int MailView=0x7f08000c;
-        public static final int StatusView=0x7f08000b;
+        public static final int AddScreen=0x7f08000d;
+        public static final int ArchiveScreen=0x7f080009;
+        public static final int DeleteScreen=0x7f08000a;
+        public static final int MailScreen=0x7f08000c;
+        public static final int StatusScreen=0x7f08000b;
         public static final int action_settings=0x7f080008;
         public static final int add_screen_button_add=0x7f080004;
         public static final int button1=0x7f080006;
@@ -45,6 +46,7 @@ public final class R {
         public static final int archive_screen=0x7f030002;
         public static final int del_screen=0x7f030003;
         public static final int mail_screen=0x7f030004;
+        public static final int status_screen=0x7f030005;
     }
     public static final class menu {
         public static final int main=0x7f070000;

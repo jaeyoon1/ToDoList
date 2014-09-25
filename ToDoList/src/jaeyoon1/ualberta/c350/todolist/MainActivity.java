@@ -23,11 +23,6 @@ public class MainActivity extends Activity {
         setContentView(R.layout.activity_main);
     }
     
-    protected void onStart(){
-    	super.onStart();
-    	
-    	
-    }
 
 
     @Override
@@ -35,6 +30,26 @@ public class MainActivity extends Activity {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.main, menu);
         return true;
+    }
+    
+    public void archiveScreen(MenuItem menu){
+    	Toast.makeText(this,"ArchiveScreen",Toast.LENGTH_SHORT).show();
+    }
+    
+    public void addScreen(MenuItem menu){
+    	Toast.makeText(this,"AddScreen",Toast.LENGTH_SHORT).show();
+    }
+    
+    public void deleteScreen(MenuItem menu){
+    	Toast.makeText(this,"DeleteScreen",Toast.LENGTH_SHORT).show();
+    }
+    
+    public void statusScreen(MenuItem menu){
+    	Toast.makeText(this,"statusScreen",Toast.LENGTH_SHORT).show();
+    }
+    
+    public void mailScreen(MenuItem menu){
+    	Toast.makeText(this,"MailScreen",Toast.LENGTH_SHORT).show();
     }
 
     @Override
