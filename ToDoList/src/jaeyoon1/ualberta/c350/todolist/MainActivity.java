@@ -1,5 +1,6 @@
 package jaeyoon1.ualberta.c350.todolist;
 
+import jaeyoon1.ualberta.c350.todolist.R;
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -34,22 +35,27 @@ public class MainActivity extends Activity {
     
     public void archiveScreen(MenuItem menu){
     	Toast.makeText(this,"ArchiveScreen",Toast.LENGTH_SHORT).show();
+    	Intent intent = new Intent(MainActivity.this,ArchiveScreenActivity.class);
+    	startActivity(intent);
     }
     
-    public void addScreen(MenuItem menu){
-    	Toast.makeText(this,"AddScreen",Toast.LENGTH_SHORT).show();
-    }
-    
+ 
     public void deleteScreen(MenuItem menu){
     	Toast.makeText(this,"DeleteScreen",Toast.LENGTH_SHORT).show();
+    	Intent intent = new Intent(MainActivity.this,DeleteScreenActivity.class);
+    	startActivity(intent);
     }
     
     public void statusScreen(MenuItem menu){
     	Toast.makeText(this,"statusScreen",Toast.LENGTH_SHORT).show();
+    	Intent intent = new Intent(MainActivity.this,StatusScreenActivity.class);
+    	startActivity(intent);
     }
     
     public void mailScreen(MenuItem menu){
     	Toast.makeText(this,"MailScreen",Toast.LENGTH_SHORT).show();
+    	Intent intent = new Intent(MainActivity.this,MailScreenActivity.class);
+    	startActivity(intent);
     }
 
     @Override

@@ -10,6 +10,5 @@
     <item android:id="@+id/StatusScreen" android:title="StatusScreen" android:onClick="statusScreen"></item>
     
     <item android:id="@+id/MailScreen" android:title="MailScreen" android:onClick="mailScreen"></item>
-    <item android:id="@+id/AddScreen" android:onClick="addScreen" android:title="AddScreen"></item>
 
 </menu>
