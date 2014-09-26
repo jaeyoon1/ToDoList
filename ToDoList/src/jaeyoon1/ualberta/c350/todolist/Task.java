@@ -9,8 +9,8 @@ public class Task implements Serializable{
 	private static final long serialVersionUID = 462323210420920383L;
 	protected String taskName;
 	protected String taskNameCheck;
-	protected Boolean taskArchived;
-	protected Boolean taskChecked;
+	protected boolean taskArchived;
+	protected boolean taskChecked;
 	
 	public Task(String taskName) {
 		// TODO Auto-generated constructor stub
@@ -30,11 +30,11 @@ public class Task implements Serializable{
 		return this.taskNameCheck;
 	}
 	
-	public Boolean isArchived(){
+	public boolean isArchived(){
 		return this.taskArchived;
 	}
 	
-	public Boolean isChecked(){
+	public boolean isChecked(){
 		return this.taskChecked;
 	}
 	

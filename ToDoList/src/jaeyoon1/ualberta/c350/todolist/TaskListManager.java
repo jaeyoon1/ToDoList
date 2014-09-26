@@ -36,10 +36,12 @@ public class TaskListManager {
 		return taskListManager;
 	}
 	
+	//constructor
 	public TaskListManager(Context context){
 		this.context = context;
 	}
 	
+	//returns tasklist from file
 	public TaskList loadTaskList() throws StreamCorruptedException, ClassNotFoundException, IOException{
 		SharedPreferences settings = context.getSharedPreferences(prefFile, Context.MODE_PRIVATE);
 		String taskListData = settings.getString(tlKey, "");
@@ -50,6 +52,7 @@ public class TaskListManager {
 		}
 	}
 	
+	//puts and commits current tasklist
 	public void saveTaskList(TaskList tl) throws IOException{
 		SharedPreferences settings = context.getSharedPreferences(prefFile, Context.MODE_PRIVATE);
 		Editor editor = settings.edit();
@@ -57,12 +60,14 @@ public class TaskListManager {
 		editor.commit();
 	}
 	
+	//converts bytes into string
 	private TaskList taskListFromString(String taskListData) throws IOException, ClassNotFoundException {
 		ByteArrayInputStream bi = new ByteArrayInputStream(Base64.decode(taskListData, Base64.DEFAULT));
 		ObjectInputStream oi = new ObjectInputStream(bi);
 		return (TaskList) oi.readObject();
 	}
 
+	//converts string into bytes
 	private String taskListToString(TaskList tl) throws IOException {
 		ByteArrayOutputStream bo = new ByteArrayOutputStream();
 		ObjectOutputStream oo = new ObjectOutputStream(bo);
