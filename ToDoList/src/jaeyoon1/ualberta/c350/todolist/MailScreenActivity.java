@@ -50,7 +50,7 @@ public class MailScreenActivity extends Activity {
 		mail.putExtra(Intent.EXTRA_SUBJECT, "jaeyoon1-list");
 		mail.putExtra(Intent.EXTRA_TEXT   ,body);
 		try {
-			Toast.makeText(MailScreenActivity.this, "Sending mail to..."+address+body, Toast.LENGTH_SHORT).show();
+			Toast.makeText(MailScreenActivity.this, "Sending mail to..."+address, Toast.LENGTH_SHORT).show();
 		    startActivity(Intent.createChooser(mail, "Send mail..."));
 		} catch (android.content.ActivityNotFoundException ex) {
 		    Toast.makeText(MailScreenActivity.this, "There are no email clients installed.", Toast.LENGTH_SHORT).show();
@@ -73,7 +73,7 @@ public class MailScreenActivity extends Activity {
 		mail.putExtra(Intent.EXTRA_SUBJECT, "jaeyoon1-list");
 		mail.putExtra(Intent.EXTRA_TEXT   ,body);
 		try {
-			Toast.makeText(MailScreenActivity.this, "Sending mail to..."+address+body, Toast.LENGTH_SHORT).show();
+			Toast.makeText(MailScreenActivity.this, "Sending mail to..."+address, Toast.LENGTH_SHORT).show();
 		    startActivity(Intent.createChooser(mail, "Send mail..."));
 		} catch (android.content.ActivityNotFoundException ex) {
 		    Toast.makeText(MailScreenActivity.this, "There are no email clients installed.", Toast.LENGTH_SHORT).show();
