@@ -1,5 +1,7 @@
 package jaeyoon1.ualberta.c350.todolist;
 
+import java.util.Collection;
+
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -13,17 +15,21 @@ public class StatusScreenActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.status_screen);
 		
+		TaskList tasklist = TaskListController.getTaskList();
+		TaskList archlist = TaskListController.getArchList();
+		
+		
 		TextView itemschecked = (TextView) findViewById(R.id.stat_checked);
 		TextView itemsunchecked = (TextView) findViewById(R.id.stat_unchecked);
 		TextView itemsarchived = (TextView) findViewById(R.id.stat_archived);
 		TextView itemsarchchecked = (TextView) findViewById(R.id.stat_archchecked);
 		TextView itemsarchunchecked = (TextView) findViewById(R.id.stat_archunchecked);
 		
-		itemschecked.setText("ItemsChecked"+Integer.toString(0));
-		itemsunchecked.setText("ItemsUnchecked"+Integer.toString(0));
-		itemsarchived.setText("ItemsArchived"+Integer.toString(0));
-		itemsarchchecked.setText("ArchivedItemsChecked"+Integer.toString(0));
-		itemsarchunchecked.setText("ArchivedItemsUnchecked"+Integer.toString(0));
+		itemschecked.setText("ItemsChecked: "+Integer.toString((tasklist.numChecked())));
+		itemsunchecked.setText("ItemsUnchecked: "+Integer.toString(tasklist.getSize()-tasklist.numChecked()));
+		itemsarchived.setText("ItemsArchived: "+Integer.toString(archlist.getSize()));
+		itemsarchchecked.setText("ArchivedItemsChecked: "+Integer.toString(archlist.numChecked()));
+		itemsarchunchecked.setText("ArchivedItemsUnchecked: "+Integer.toString(archlist.getSize()-archlist.numChecked()));
 	}
 
 	@Override
