@@ -1,16 +1,16 @@
 package jaeyoon1.ualberta.c350.todolist;
 
 public class TaskListController {
-	private static TaskList tasklist = null; //all other views
+	private static TaskList tasklist = null; //main list for main/delete views
 	private static TaskList archlist = null; //archive views
 	
+	//if list is null, create a new one, otherwise return list.
 	static public TaskList getTaskList(){
 		if (tasklist == null){
 			tasklist = new TaskList();
 		}
 		return tasklist;
 	}
-	
 	static public TaskList getArchList(){
 		if (archlist == null){
 			archlist = new TaskList();
@@ -18,7 +18,8 @@ public class TaskListController {
 		return archlist;
 	}
 	
-	public Task chooseTask(int i){
+	
+	public Task getTask(int i){
 		return getTaskList().getTask(i);
 	}
 	

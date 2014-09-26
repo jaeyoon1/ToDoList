@@ -9,31 +9,31 @@
     tools:context="jaeyoon1.ualberta.c350.todolist.ArchiveScreenActivity" >
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/arch_button_unarch"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/tasklist_archive"
         android:layout_alignParentBottom="true"
-        android:layout_toLeftOf="@+id/button1"
+        android:layout_toLeftOf="@+id/arch_button_mailsel"
         android:text="UnArchive" />
 
     <ListView
         android:id="@+id/tasklist_archive"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/button2"
+        android:layout_above="@+id/arch_button_unarch"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true" >
 
     </ListView>
 
     <Button
-        android:id="@+id/button1"
+        android:id="@+id/arch_button_mailsel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/button2"
+        android:layout_alignBottom="@+id/arch_button_unarch"
         android:layout_alignParentRight="true"
-        android:layout_alignTop="@+id/button2"
+        android:layout_alignTop="@+id/arch_button_unarch"
         android:text="Email" />
 
 </RelativeLayout>

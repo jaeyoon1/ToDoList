@@ -51,7 +51,7 @@ public class MainActivity extends Activity {
 			@Override
 			public void onItemClick(AdapterView<?> adapterView, View view,
 					int position, long id) {
-				Toast.makeText(MainActivity.this,"Checked",Toast.LENGTH_SHORT).show();
+				//Toast.makeText(MainActivity.this,"Checked",Toast.LENGTH_SHORT).show();
 				Task task = TaskListController.getTaskList().getTask(position);
 				if (task.isChecked()==true){
 					TaskListController.getTaskList().getTask(position).setChecked(false);

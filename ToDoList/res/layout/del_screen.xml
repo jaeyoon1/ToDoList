@@ -9,30 +9,30 @@
     tools:context="jaeyoon1.ualberta.c350.todolist.DeleteScreenActivity" >
 
     <Button
-        android:id="@+id/button1"
+        android:id="@+id/del_button_del"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
-        android:layout_toLeftOf="@+id/button2"
+        android:layout_toLeftOf="@+id/del_button_mailsel"
         android:text="Delete" />
 
     <ListView
         android:id="@+id/tasklist_delete"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/button1"
+        android:layout_above="@+id/del_button_del"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true" >
 
     </ListView>
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/del_button_mailsel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/button1"
-        android:layout_alignBottom="@+id/button1"
+        android:layout_alignBaseline="@+id/del_button_del"
+        android:layout_alignBottom="@+id/del_button_del"
         android:layout_alignParentRight="true"
         android:text="Email" />
 
