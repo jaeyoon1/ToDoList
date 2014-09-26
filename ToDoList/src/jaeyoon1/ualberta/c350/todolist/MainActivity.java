@@ -13,6 +13,7 @@ import android.content.Intent;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
 import android.widget.AdapterView.OnItemLongClickListener;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -34,6 +35,7 @@ public class MainActivity extends Activity {
         final ArrayList<Task> list = new ArrayList<Task>(Tasks);
         final ArrayAdapter<Task> taskAdapter = new ArrayAdapter<Task>(this,android.R.layout.simple_list_item_1,list);
         listView.setAdapter(taskAdapter);
+        
         TaskListController.getTaskList().addListener(new Listener(){
         	public void update(){
         		list.clear();
@@ -41,6 +43,22 @@ public class MainActivity extends Activity {
         		list.addAll(Tasks);
         		taskAdapter.notifyDataSetChanged();
         	}
+        });
+        
+        listView.setOnItemClickListener(new OnItemClickListener(){
+
+			@Override
+			public void onItemClick(AdapterView<?> adapterView, View view,
+					int position, long id) {
+				Toast.makeText(MainActivity.this,list.get(position).toString()+"Checked",Toast.LENGTH_SHORT).show();
+				Task task = list.get(position);
+				if (task.isChecked()){
+					task.setChecked(true);
+				} else{
+					task.setChecked(false);
+				}
+				
+			}
         });
         
         listView.setOnItemLongClickListener(new OnItemLongClickListener(){
@@ -53,9 +71,9 @@ public class MainActivity extends Activity {
 				
 				// TODO Auto-generated method stub
 				return false;
-			}
-        });
+		}});
     }
+
 
 
     @Override
