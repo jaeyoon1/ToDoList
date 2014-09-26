@@ -10,7 +10,7 @@ public class Task {
 	public Task(String taskName) {
 		// TODO Auto-generated constructor stub
 		this.taskName = taskName;
-		this.taskNameCheck = "[]TODO: "+taskName;
+		this.taskNameCheck = "[ ]TODO: "+taskName;
 		this.taskArchived = false;
 		this.taskSelected = false;
 		this.taskChecked = false;

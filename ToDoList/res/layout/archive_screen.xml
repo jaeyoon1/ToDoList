@@ -14,7 +14,7 @@
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/tasklist_archive"
         android:layout_alignParentBottom="true"
-        android:layout_alignParentRight="true"
+        android:layout_toLeftOf="@+id/button1"
         android:text="UnArchive" />
 
     <ListView
@@ -26,5 +26,14 @@
         android:layout_alignParentTop="true" >
 
     </ListView>
+
+    <Button
+        android:id="@+id/button1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/button2"
+        android:layout_alignParentRight="true"
+        android:layout_alignTop="@+id/button2"
+        android:text="Email" />
 
 </RelativeLayout>
