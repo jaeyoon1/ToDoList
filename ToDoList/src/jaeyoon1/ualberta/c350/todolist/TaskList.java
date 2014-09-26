@@ -1,13 +1,18 @@
 package jaeyoon1.ualberta.c350.todolist;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collection;
 
 import jaeyoon1.ualberta.c350.todolist.Task;
 
-public class TaskList {
+public class TaskList implements Serializable {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -3288196355256026422L;
 	protected ArrayList<Task> TaskArrayList;
-	protected ArrayList<Listener> listeners;
+	protected transient ArrayList<Listener> listeners = null;
 	
 	//Constructor
 	public TaskList() {
@@ -17,17 +22,26 @@ public class TaskList {
 	
 	//Listener Methods
 	public void notifyListeners(){
-		for(Listener listener : listeners){
+		for(Listener listener : getListeners()){
 			listener.update();
 		}
 	}
-	public void addListener (Listener l){
-		listeners.add(l);
-	}
-	public void removeListener (Listener l){
-		listeners.remove(l);
+	
+	private ArrayList<Listener> getListeners() {
+		if (listeners == null ) {
+			listeners = new ArrayList<Listener>();
+		}
+		return listeners;
 	}
 	
+	
+	public void addListener (Listener l){
+		getListeners().add(l);
+	}
+	
+	public void removeListener (Listener l){
+		getListeners().remove(l);
+	}
 	
 	// Returns Collection of Tasks
 	public Collection<Task> getTasks() {

@@ -21,6 +21,7 @@ public class DeleteScreenActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.del_screen);
+		TaskListManager.initManager(this.getApplicationContext());
 		
         ListView listView = (ListView) findViewById(R.id.tasklist_delete);
         Collection<Task> Tasks = TaskListController.getTaskList().getTasks();

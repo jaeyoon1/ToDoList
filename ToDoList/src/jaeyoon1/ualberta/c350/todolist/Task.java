@@ -1,10 +1,15 @@
 package jaeyoon1.ualberta.c350.todolist;
 
-public class Task {
+import java.io.Serializable;
+
+public class Task implements Serializable{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 462323210420920383L;
 	protected String taskName;
 	protected String taskNameCheck;
 	protected Boolean taskArchived;
-	protected Boolean taskSelected;
 	protected Boolean taskChecked;
 	
 	public Task(String taskName) {
@@ -12,7 +17,6 @@ public class Task {
 		this.taskName = taskName;
 		this.taskNameCheck = "[ ]TODO: "+taskName;
 		this.taskArchived = false;
-		this.taskSelected = false;
 		this.taskChecked = false;
 		
 	}
@@ -30,21 +34,12 @@ public class Task {
 		return this.taskArchived;
 	}
 	
-	public Boolean isSelected(){
-		return this.taskSelected;
-	}
-	
 	public Boolean isChecked(){
 		return this.taskChecked;
 	}
 	
 	public void setArchive(boolean a){
 		this.taskArchived = a;
-	}
-	
-	public void setSelected(boolean a){
-
-		this.taskSelected = a;
 	}
 	
 	public void setChecked(boolean a){

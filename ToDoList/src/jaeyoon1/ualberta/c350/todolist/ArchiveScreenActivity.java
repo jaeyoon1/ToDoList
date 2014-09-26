@@ -21,6 +21,7 @@ public class ArchiveScreenActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.archive_screen);
+		TaskListManager.initManager(this.getApplicationContext());
 		
         ListView listView = (ListView) findViewById(R.id.tasklist_archive);
         Collection<Task> Tasks = TaskListController.getArchList().getTasks();

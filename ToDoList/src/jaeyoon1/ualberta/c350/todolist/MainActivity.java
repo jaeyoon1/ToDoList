@@ -8,7 +8,6 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.content.Context;
 import android.content.Intent;
 import android.view.View;
 import android.widget.AdapterView;
@@ -27,6 +26,7 @@ public class MainActivity extends Activity {
     	
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        TaskListManager.initManager(this.getApplicationContext());
         
     	ListView listView = (ListView) findViewById(R.id.tasklist_main);
         Collection<Task> Tasks = TaskListController.getTaskList().getTasks();

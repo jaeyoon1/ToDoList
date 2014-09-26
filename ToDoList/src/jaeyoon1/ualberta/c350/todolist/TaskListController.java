@@ -1,5 +1,7 @@
 package jaeyoon1.ualberta.c350.todolist;
 
+import java.io.IOException;
+
 public class TaskListController {
 	private static TaskList tasklist = null; //main list for main/delete views
 	private static TaskList archlist = null; //archive views
@@ -7,9 +9,37 @@ public class TaskListController {
 	//if list is null, create a new one, otherwise return list.
 	static public TaskList getTaskList(){
 		if (tasklist == null){
-			tasklist = new TaskList();
+			try {
+				tasklist = TaskListManager.getManager().loadTaskList();
+				tasklist.addListener(new Listener(){
+					@Override
+					public void update(){
+						saveTaskList();
+					}
+				});
+			} catch (ClassNotFoundException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+				throw new RuntimeException("could not deserialize tasklist from tasklistmanager");
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+				throw new RuntimeException("could not deserialize tasklist from tasklistmanager");
+			}
+			//tasklist = new TaskList();
 		}
 		return tasklist;
+	}
+	
+	static public void saveTaskList(){
+		try {
+			TaskListManager.getManager().saveTaskList((getTaskList()));
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			throw new RuntimeException("could not deserialize tasklist from tasklistmanager");
+		}
+		
 	}
 	
 	static public TaskList getArchList(){

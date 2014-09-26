@@ -14,6 +14,7 @@ public class StatusScreenActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.status_screen);
+		TaskListManager.initManager(this.getApplicationContext());
 		
 		//grab both lists
 		TaskList tasklist = TaskListController.getTaskList();

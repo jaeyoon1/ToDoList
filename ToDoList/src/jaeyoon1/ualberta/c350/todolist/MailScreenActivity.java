@@ -17,6 +17,7 @@ public class MailScreenActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.mail_screen);
+		TaskListManager.initManager(this.getApplicationContext());
 	}
 
 	@Override
