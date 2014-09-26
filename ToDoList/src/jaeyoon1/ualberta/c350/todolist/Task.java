@@ -10,7 +10,7 @@ public class Task {
 	public Task(String taskName) {
 		// TODO Auto-generated constructor stub
 		this.taskName = taskName;
-		this.taskNameCheck = taskName+"(UnChecked)";
+		this.taskNameCheck = "[]TODO: "+taskName;
 		this.taskArchived = false;
 		this.taskSelected = false;
 		this.taskChecked = false;
@@ -49,9 +49,9 @@ public class Task {
 	
 	public void setChecked(boolean a){
 		if (a){
-			taskNameCheck = this.taskName+"(Checked)";
+			taskNameCheck = "[x]TODO: "+this.taskName;
 		}else{
-			taskNameCheck = this.taskName+"(UnChecked)";
+			taskNameCheck = "[ ]TODO: "+this.taskName;
 		}
 		this.taskChecked = a;
 	}

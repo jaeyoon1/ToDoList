@@ -2,7 +2,6 @@ package jaeyoon1.ualberta.c350.todolist;
 
 import java.util.ArrayList;
 import java.util.Collection;
-
 import jaeyoon1.ualberta.c350.todolist.R;
 import android.app.Activity;
 import android.os.Bundle;
@@ -17,6 +16,7 @@ import android.widget.AdapterView.OnItemLongClickListener;
 
 public class ArchiveScreenActivity extends Activity {
 
+	//same as MainActivity
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -36,19 +36,15 @@ public class ArchiveScreenActivity extends Activity {
     		taskAdapter.notifyDataSetChanged();
     	}});
         
+        //remove single archive item upon holding item
         listView.setOnItemLongClickListener(new OnItemLongClickListener(){
-
 			@Override
 			public boolean onItemLongClick(AdapterView<?> adapterView, View view,
 					int position, long id) {
 					Toast.makeText(ArchiveScreenActivity.this,list.get(position).toString()+"ArchiveDeleted",Toast.LENGTH_SHORT).show();
 					list.remove(position);
 					TaskListController.getArchList().removeTask(position);
-					
-
-				
-				// TODO Auto-generated method stub
-				return false;
+				return true;
 			}
         });
 	}

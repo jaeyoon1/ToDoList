@@ -1,6 +1,6 @@
 package jaeyoon1.ualberta.c350.todolist;
 
-import java.util.Collection;
+
 
 import android.app.Activity;
 import android.os.Bundle;
@@ -15,16 +15,18 @@ public class StatusScreenActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.status_screen);
 		
+		//grab both lists
 		TaskList tasklist = TaskListController.getTaskList();
 		TaskList archlist = TaskListController.getArchList();
 		
-		
+		//setup textview
 		TextView itemschecked = (TextView) findViewById(R.id.stat_checked);
 		TextView itemsunchecked = (TextView) findViewById(R.id.stat_unchecked);
 		TextView itemsarchived = (TextView) findViewById(R.id.stat_archived);
 		TextView itemsarchchecked = (TextView) findViewById(R.id.stat_archchecked);
 		TextView itemsarchunchecked = (TextView) findViewById(R.id.stat_archunchecked);
 		
+		//assign count to textview
 		itemschecked.setText("ItemsChecked: "+Integer.toString((tasklist.numChecked())));
 		itemsunchecked.setText("ItemsUnchecked: "+Integer.toString(tasklist.getSize()-tasklist.numChecked()));
 		itemsarchived.setText("ItemsArchived: "+Integer.toString(archlist.getSize()));

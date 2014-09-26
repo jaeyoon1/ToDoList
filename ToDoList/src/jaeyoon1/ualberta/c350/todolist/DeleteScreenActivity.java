@@ -16,6 +16,7 @@ import android.widget.AdapterView.OnItemLongClickListener;
 
 public class DeleteScreenActivity extends Activity {
 
+	//same as MainActivity
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -37,7 +38,8 @@ public class DeleteScreenActivity extends Activity {
 	    });
         
         listView.setOnItemLongClickListener(new OnItemLongClickListener(){
-
+        	
+        //Ask to delete single item if held down
 		@Override
 		public boolean onItemLongClick(AdapterView<?> adapterView, View view,
 			int position, long id) {

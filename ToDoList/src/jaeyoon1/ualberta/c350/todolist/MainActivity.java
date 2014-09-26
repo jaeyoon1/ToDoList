@@ -24,6 +24,7 @@ import android.widget.Toast;
 
 public class MainActivity extends Activity {
 
+	// Based on Abram Hindle's StudentPicker
     @Override
     protected void onCreate(Bundle savedInstanceState) {
     	
@@ -45,8 +46,8 @@ public class MainActivity extends Activity {
         	}
         });
         
+        //Tap item to check item
         listView.setOnItemClickListener(new OnItemClickListener(){
-
 			@Override
 			public void onItemClick(AdapterView<?> adapterView, View view,
 					int position, long id) {
@@ -61,6 +62,7 @@ public class MainActivity extends Activity {
 			}
         });
         
+        //Hold item to archive single item
         listView.setOnItemLongClickListener(new OnItemLongClickListener(){
 			@Override
 			public boolean onItemLongClick(AdapterView<?> adapterView, View view,
@@ -71,27 +73,17 @@ public class MainActivity extends Activity {
 				Toast.makeText(MainActivity.this,list.get(position).toString()+"Archived",Toast.LENGTH_SHORT).show();
 				TaskListController.getArchList().addTask(TaskListController.getTaskList().getTask(position));
 				}
-				// TODO Auto-generated method stub
-				return true;
+				return true;// setting to true prevents onItemClick from being triggered when onItemLongClick is triggered.
 		}});
     }
 
-
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.main, menu);
-        return true;
-    }
-    
+    //Inflate screens when button pressed from menu
     public void archiveScreen(MenuItem menu){
     	Toast.makeText(this,"ArchiveScreen",Toast.LENGTH_SHORT).show();
     	Intent intent = new Intent(MainActivity.this,ArchiveScreenActivity.class);
     	startActivity(intent);
     }
     
- 
     public void deleteScreen(MenuItem menu){
     	Toast.makeText(this,"DeleteScreen",Toast.LENGTH_SHORT).show();
     	Intent intent = new Intent(MainActivity.this,DeleteScreenActivity.class);
@@ -110,6 +102,7 @@ public class MainActivity extends Activity {
     	startActivity(intent);
     }
     
+    //AddTask Button
     public void addTask(View view){
     	Toast.makeText(this,"AddButton",Toast.LENGTH_SHORT).show();
     	TaskListController tc = new TaskListController();
@@ -119,6 +112,15 @@ public class MainActivity extends Activity {
     	//Toast.makeText(this,Integer.toString(tc.getSize()),Toast.LENGTH_SHORT).show();
     }
     
+
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.main, menu);
+        return true;
+    }
+
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
