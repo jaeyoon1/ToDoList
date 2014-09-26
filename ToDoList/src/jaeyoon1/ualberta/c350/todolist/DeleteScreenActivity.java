@@ -43,7 +43,7 @@ public class DeleteScreenActivity extends Activity {
 		@Override
 		public boolean onItemLongClick(AdapterView<?> adapterView, View view,
 			int position, long id) {
-				Toast.makeText(DeleteScreenActivity.this,list.get(position).toString()+"TaskDeleted",Toast.LENGTH_SHORT).show();
+				Toast.makeText(DeleteScreenActivity.this,"'"+list.get(position).toString().substring(8,list.get(position).toString().length())+"' TaskDeleted",Toast.LENGTH_SHORT).show();
 				list.remove(position);
 				TaskListController.getTaskList().removeTask(position);
 				return false;

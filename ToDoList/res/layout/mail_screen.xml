@@ -9,24 +9,6 @@
     tools:context="jaeyoon1.ualberta.c350.todolist.MailScreenActivity" >
 
     <Button
-        android:id="@+id/button_mailcur"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentTop="true"
-        android:text="Email Current Tasks" />
-
-    <Button
-        android:id="@+id/button_mailarch"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignRight="@+id/button_mailcur"
-        android:layout_below="@+id/button_mailcur"
-        android:text="Email Archived Tasks" />
-
-    <Button
         android:id="@+id/button_mailall"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -40,14 +22,32 @@
         android:id="@+id/emailaddr"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
-        android:layout_alignRight="@+id/button_mailall"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
         android:ems="10"
         android:hint="emailaddress@sample.com"
         android:inputType="textEmailAddress" >
 
         <requestFocus />
     </EditText>
+
+    <Button
+        android:id="@+id/button_mailcur"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/emailaddr"
+        android:text="Email Current Tasks" />
+
+    <Button
+        android:id="@+id/button_mailarch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/button_mailcur"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/button_mailcur"
+        android:text="Email Archived Tasks" />
 
 </RelativeLayout>

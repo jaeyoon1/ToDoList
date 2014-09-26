@@ -11,20 +11,17 @@ import android.view.MenuItem;
 import android.content.Context;
 import android.content.Intent;
 import android.view.View;
-import android.view.View.OnClickListener;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.AdapterView.OnItemLongClickListener;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
-import android.widget.TextView;
 import android.widget.Toast;
 
 public class MainActivity extends Activity {
 
-	// Based on Abram Hindle's StudentPicker
+	// Based on Prof.Abram Hindle's StudentPicker app tutorial.
     @Override
     protected void onCreate(Bundle savedInstanceState) {
     	
@@ -67,10 +64,12 @@ public class MainActivity extends Activity {
 			@Override
 			public boolean onItemLongClick(AdapterView<?> adapterView, View view,
 					int position, long id) {
+				//do nothing if item is already archived
 				if(TaskListController.getArchList().getTasks().contains(TaskListController.getTaskList().getTask(position))){
-					Toast.makeText(MainActivity.this,"Item already Archived",Toast.LENGTH_SHORT).show();
+					Toast.makeText(MainActivity.this,"Item is already Archived",Toast.LENGTH_SHORT).show();
 				} else {
-				Toast.makeText(MainActivity.this,list.get(position).toString()+"Archived",Toast.LENGTH_SHORT).show();
+				//otherwise add selected item to archlist
+				Toast.makeText(MainActivity.this,"'"+list.get(position).toString().substring(8,list.get(position).toString().length())+"' Archived",Toast.LENGTH_SHORT).show();
 				TaskListController.getArchList().addTask(TaskListController.getTaskList().getTask(position));
 				}
 				return true;// setting to true prevents onItemClick from being triggered when onItemLongClick is triggered.
@@ -104,12 +103,10 @@ public class MainActivity extends Activity {
     
     //AddTask Button
     public void addTask(View view){
-    	Toast.makeText(this,"AddButton",Toast.LENGTH_SHORT).show();
+    	//Toast.makeText(this,"AddButton",Toast.LENGTH_SHORT).show();
     	TaskListController tc = new TaskListController();
     	EditText textview = (EditText) findViewById(R.id.main_textfield_add);
     	tc.addTask(new Task(textview.getText().toString()));
-    	//Toast.makeText(this,textview.getText().toString(),Toast.LENGTH_SHORT).show();
-    	//Toast.makeText(this,Integer.toString(tc.getSize()),Toast.LENGTH_SHORT).show();
     }
     
 

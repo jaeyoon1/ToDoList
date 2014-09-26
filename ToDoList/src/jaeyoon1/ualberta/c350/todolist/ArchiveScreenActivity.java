@@ -41,10 +41,10 @@ public class ArchiveScreenActivity extends Activity {
 			@Override
 			public boolean onItemLongClick(AdapterView<?> adapterView, View view,
 					int position, long id) {
-					Toast.makeText(ArchiveScreenActivity.this,list.get(position).toString()+"ArchiveDeleted",Toast.LENGTH_SHORT).show();
+					Toast.makeText(ArchiveScreenActivity.this,"'"+list.get(position).toString().substring(8,list.get(position).toString().length())+"' ArchiveDeleted",Toast.LENGTH_SHORT).show();
 					list.remove(position);
 					TaskListController.getArchList().removeTask(position);
-				return true;
+				return false;
 			}
         });
 	}

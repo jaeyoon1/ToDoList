@@ -8,32 +8,23 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="jaeyoon1.ualberta.c350.todolist.DeleteScreenActivity" >
 
-    <Button
-        android:id="@+id/del_button_del"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true"
-        android:layout_toLeftOf="@+id/del_button_mailsel"
-        android:text="Delete" />
-
     <ListView
         android:id="@+id/tasklist_delete"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/del_button_del"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true" >
+        android:layout_below="@+id/textView1" >
 
     </ListView>
 
-    <Button
-        android:id="@+id/del_button_mailsel"
+    <TextView
+        android:id="@+id/textView1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/del_button_del"
-        android:layout_alignBottom="@+id/del_button_del"
-        android:layout_alignParentRight="true"
-        android:text="Email" />
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignRight="@+id/tasklist_delete"
+        android:text="Hold item to delete from list"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
 
 </RelativeLayout>
