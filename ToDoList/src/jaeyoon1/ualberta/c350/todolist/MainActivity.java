@@ -106,7 +106,12 @@ public class MainActivity extends Activity {
     	//Toast.makeText(this,"AddButton",Toast.LENGTH_SHORT).show();
     	TaskListController tc = new TaskListController();
     	EditText textview = (EditText) findViewById(R.id.main_textfield_add);
-    	tc.addTask(new Task(textview.getText().toString()));
+    	String text = textview.getText().toString();
+    	if (text.length() <= 0){
+    		Toast.makeText(this,"Empty Input",Toast.LENGTH_SHORT).show();
+    	} else {
+    		tc.addTask(new Task(text));
+    	}
     }
     
 
