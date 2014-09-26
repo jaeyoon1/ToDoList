@@ -12,6 +12,8 @@ public class Task implements Serializable{
 	protected boolean taskArchived;
 	protected boolean taskChecked;
 	
+	//Class containing attributes and methods for each individual task
+	//constructor
 	public Task(String taskName) {
 		// TODO Auto-generated constructor stub
 		this.taskName = taskName;

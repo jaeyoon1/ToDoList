@@ -3,6 +3,10 @@ package jaeyoon1.ualberta.c350.todolist;
 import java.io.IOException;
 
 public class TaskListController {
+	
+	//class that acts as interface between the activities and the tasklist
+	//contains methods that allow you to manipulate tasklist and archlist
+	
 	private static TaskList tasklist = null; //main list for main/delete views
 	private static TaskList archlist = null; //archive views
 	

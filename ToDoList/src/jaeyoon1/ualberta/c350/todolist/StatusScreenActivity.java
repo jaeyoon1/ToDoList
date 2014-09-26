@@ -27,7 +27,7 @@ public class StatusScreenActivity extends Activity {
 		TextView itemsarchchecked = (TextView) findViewById(R.id.stat_archchecked);
 		TextView itemsarchunchecked = (TextView) findViewById(R.id.stat_archunchecked);
 		
-		//assign count to textview
+		//calculate count assign count to each textview
 		itemschecked.setText("ItemsChecked: "+Integer.toString((tasklist.numChecked())));
 		itemsunchecked.setText("ItemsUnchecked: "+Integer.toString(tasklist.getSize()-tasklist.numChecked()));
 		itemsarchived.setText("ItemsArchived: "+Integer.toString(archlist.getSize()));

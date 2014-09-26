@@ -19,8 +19,8 @@ import android.widget.ListView;
 import android.widget.Toast;
 
 public class MainActivity extends Activity {
-
-	// Based on Prof.Abram Hindle's StudentPicker app tutorial.
+	
+	// Based on Abram Hindle's StudentPicker app tutorial.
     @Override
     protected void onCreate(Bundle savedInstanceState) {
     	
@@ -101,7 +101,7 @@ public class MainActivity extends Activity {
     	startActivity(intent);
     }
     
-    //AddTask Button
+    //AddTask Button, add string from edittext when clicked
     public void addTask(View view){
     	//Toast.makeText(this,"AddButton",Toast.LENGTH_SHORT).show();
     	TaskListController tc = new TaskListController();

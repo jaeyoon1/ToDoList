@@ -15,7 +15,7 @@ import android.widget.Toast;
 import android.widget.AdapterView.OnItemLongClickListener;
 
 public class ArchiveScreenActivity extends Activity {
-
+	//allows users to remove archived items by longclicking
 	//same as MainActivity
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {

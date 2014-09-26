@@ -12,6 +12,7 @@ import android.content.SharedPreferences.Editor;
 import android.util.Base64;
 
 //Based on Abram Hindle's Student Picker App
+//only saves tasklist for now, so restarting the app will remove every archives and checks
 
 public class TaskListManager {
 	static String prefFile = "TaskList";

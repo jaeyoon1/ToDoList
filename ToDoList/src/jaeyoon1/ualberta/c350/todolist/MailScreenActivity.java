@@ -29,6 +29,7 @@ public class MailScreenActivity extends Activity {
 	
 	
 	//taken from http://stackoverflow.com/questions/4404084/find-if-a-value-exists-in-arraylist
+	//grabs the currently added tasks and send mail after adding them into a string
 	public void mailAll(View view){
 		EditText mailtext = (EditText) findViewById(R.id.emailaddr);
 		String address = mailtext.getText().toString();

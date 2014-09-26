@@ -15,7 +15,7 @@ import android.widget.Toast;
 import android.widget.AdapterView.OnItemLongClickListener;
 
 public class DeleteScreenActivity extends Activity {
-
+	//Allows users to delete tasks by longclicking 
 	//same as MainActivity
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {

@@ -14,6 +14,9 @@ public class TaskList implements Serializable {
 	protected ArrayList<Task> TaskArrayList;
 	protected transient ArrayList<Listener> listeners = null;
 	
+	//Class containing attributes and methods for task and arraylist.
+	//can also call individual tasks
+	
 	//Constructor
 	public TaskList() {
 		TaskArrayList = new ArrayList<Task>();
