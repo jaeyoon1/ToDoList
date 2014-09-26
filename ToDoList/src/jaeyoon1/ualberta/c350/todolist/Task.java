@@ -11,6 +11,9 @@ public class Task {
 		// TODO Auto-generated constructor stub
 		this.taskName = taskName;
 		this.taskNameCheck = taskName+"(UnChecked)";
+		this.taskArchived = false;
+		this.taskSelected = false;
+		this.taskChecked = false;
 		
 	}
 	

@@ -28,22 +28,23 @@ public class DeleteScreenActivity extends Activity {
         listView.setAdapter(taskAdapter);
         
         TaskListController.getTaskList().addListener(new Listener(){
-    	public void update(){
-    		list.clear();
-    		Collection<Task> Tasks = TaskListController.getTaskList().getTasks();
-    		list.addAll(Tasks);
-    		taskAdapter.notifyDataSetChanged();
-    	}});
+	    	public void update(){
+	    		list.clear();
+	    		Collection<Task> Tasks = TaskListController.getTaskList().getTasks();
+	    		list.addAll(Tasks);
+	    		taskAdapter.notifyDataSetChanged();
+	    	}
+	    });
         
         listView.setOnItemLongClickListener(new OnItemLongClickListener(){
 
-			@Override
-			public boolean onItemLongClick(AdapterView<?> adapterView, View view,
-					int position, long id) {
-					Toast.makeText(DeleteScreenActivity.this,list.get(position).toString()+"TaskDeleted",Toast.LENGTH_SHORT).show();
-					list.remove(position);
-					TaskListController.getTaskList().removeTask(position);
-					return false;
+		@Override
+		public boolean onItemLongClick(AdapterView<?> adapterView, View view,
+			int position, long id) {
+				Toast.makeText(DeleteScreenActivity.this,list.get(position).toString()+"TaskDeleted",Toast.LENGTH_SHORT).show();
+				list.remove(position);
+				TaskListController.getTaskList().removeTask(position);
+				return false;
 			}
         });
 	}

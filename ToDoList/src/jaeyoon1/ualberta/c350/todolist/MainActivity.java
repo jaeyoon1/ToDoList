@@ -50,14 +50,14 @@ public class MainActivity extends Activity {
 			@Override
 			public void onItemClick(AdapterView<?> adapterView, View view,
 					int position, long id) {
-				Toast.makeText(MainActivity.this,list.get(position).toString()+"Checked",Toast.LENGTH_SHORT).show();
-				Task task = list.get(position);
-				if (task.isChecked()){
-					task.setChecked(true);
+				Toast.makeText(MainActivity.this,"Checked",Toast.LENGTH_SHORT).show();
+				Task task = TaskListController.getTaskList().getTask(position);
+				if (task.isChecked()==true){
+					TaskListController.getTaskList().getTask(position).setChecked(false);
 				} else{
-					task.setChecked(false);
+					TaskListController.getTaskList().getTask(position).setChecked(true);
 				}
-				
+				taskAdapter.notifyDataSetChanged();
 			}
         });
         
@@ -65,12 +65,14 @@ public class MainActivity extends Activity {
 			@Override
 			public boolean onItemLongClick(AdapterView<?> adapterView, View view,
 					int position, long id) {
+				if(TaskListController.getTaskList().getTasks().contains(TaskListController.getTaskList().getTask(position))){
+					Toast.makeText(MainActivity.this,"Item already Archived",Toast.LENGTH_SHORT).show();
+				} else {
 				Toast.makeText(MainActivity.this,list.get(position).toString()+"Archived",Toast.LENGTH_SHORT).show();
-				list.remove(position);
 				TaskListController.getArchList().addTask(TaskListController.getTaskList().getTask(position));
-				
+				}
 				// TODO Auto-generated method stub
-				return false;
+				return true;
 		}});
     }
 
