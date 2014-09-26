@@ -9,8 +9,48 @@
     tools:context="jaeyoon1.ualberta.c350.todolist.StatusScreenActivity" >
 
     <TextView
+        android:id="@+id/stat_checked"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/hello_world" />
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:text="ItemsChecked" />
+
+    <TextView
+        android:id="@+id/stat_unchecked"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignRight="@+id/stat_checked"
+        android:layout_below="@+id/stat_checked"
+        android:text="ItemsUnchecked" />
+
+    <TextView
+        android:id="@+id/stat_archived"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/stat_unchecked"
+        android:layout_alignRight="@+id/stat_unchecked"
+        android:layout_below="@+id/stat_unchecked"
+        android:text="ArchivedItems" />
+
+    <TextView
+        android:id="@+id/stat_archchecked"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/stat_archived"
+        android:text="ArchivedItemsChecked" />
+
+    <TextView
+        android:id="@+id/stat_archunchecked"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignRight="@+id/stat_archchecked"
+        android:layout_below="@+id/stat_archchecked"
+        android:text="ArchivedItemsUnchecked" />
 
 </RelativeLayout>

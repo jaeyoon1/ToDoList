@@ -65,7 +65,7 @@ public class MainActivity extends Activity {
 			@Override
 			public boolean onItemLongClick(AdapterView<?> adapterView, View view,
 					int position, long id) {
-				if(TaskListController.getTaskList().getTasks().contains(TaskListController.getTaskList().getTask(position))){
+				if(TaskListController.getArchList().getTasks().contains(TaskListController.getTaskList().getTask(position))){
 					Toast.makeText(MainActivity.this,"Item already Archived",Toast.LENGTH_SHORT).show();
 				} else {
 				Toast.makeText(MainActivity.this,list.get(position).toString()+"Archived",Toast.LENGTH_SHORT).show();
