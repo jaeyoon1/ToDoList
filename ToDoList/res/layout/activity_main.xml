@@ -9,7 +9,7 @@
     tools:context="jaeyoon1.ualberta.c350.todolist.MainActivity" >
 
     <ListView
-        android:id="@+id/tasklist"
+        android:id="@+id/tasklist_main"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_above="@+id/main_textfield_add"

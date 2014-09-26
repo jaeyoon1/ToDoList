@@ -12,6 +12,8 @@ import android.content.Context;
 import android.content.Intent;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemLongClickListener;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
@@ -23,15 +25,15 @@ public class MainActivity extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+    	
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        ListView listView = (ListView) findViewById(R.id.tasklist);
+        
+    	ListView listView = (ListView) findViewById(R.id.tasklist_main);
         Collection<Task> Tasks = TaskListController.getTaskList().getTasks();
         final ArrayList<Task> list = new ArrayList<Task>(Tasks);
         final ArrayAdapter<Task> taskAdapter = new ArrayAdapter<Task>(this,android.R.layout.simple_list_item_1,list);
         listView.setAdapter(taskAdapter);
-
-        
         TaskListController.getTaskList().addListener(new Listener(){
         	public void update(){
         		list.clear();
@@ -40,8 +42,20 @@ public class MainActivity extends Activity {
         		taskAdapter.notifyDataSetChanged();
         	}
         });
-	}
-    
+        
+        listView.setOnItemLongClickListener(new OnItemLongClickListener(){
+			@Override
+			public boolean onItemLongClick(AdapterView<?> adapterView, View view,
+					int position, long id) {
+				Toast.makeText(MainActivity.this,list.get(position).toString()+"Archived",Toast.LENGTH_SHORT).show();
+				list.remove(position);
+				TaskListController.getArchList().addTask(TaskListController.getTaskList().getTask(position));
+				
+				// TODO Auto-generated method stub
+				return false;
+			}
+        });
+    }
 
 
     @Override
